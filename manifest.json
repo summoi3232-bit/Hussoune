@@ -1,0 +1,19 @@
+{
+  "name": "الحصون الخمسة - رفيق الحفظ اليومي",
+  "short_name": "الحصون الخمسة",
+  "description": "مساعد يومي لتنفيذ برنامج الحصون الخمسة لحفظ القرآن الكريم للشيخ سعيد أبو العلا حمزة",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F1B24",
+  "theme_color": "#0F1B24",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

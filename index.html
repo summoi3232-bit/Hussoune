@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>الحصون الخمسة — رفيق الحفظ اليومي</title>
+<meta name="description" content="مساعد يومي لتطبيق منهج الحصون الخمسة في حفظ القرآن الكريم للشيخ سعيد أبو العلا حمزة">
+<meta name="theme-color" content="#0F1B24">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===== Header ===== -->
+  <header class="topbar">
+    <div class="date-row">
+      <div class="date-block">
+        <span class="hijri" id="hijriDate">--</span>
+        <span class="greg" id="gregDate">--</span>
+      </div>
+      <button class="icon-btn" id="notifBtn" title="تفعيل التنبيهات" aria-label="تفعيل التنبيهات">🔔</button>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="dayProgressFill"></div></div>
+      <span class="progress-label" id="dayProgressLabel">0% من إنجاز اليوم</span>
+    </div>
+  </header>
+
+  <!-- ===== Screens ===== -->
+  <main id="screens">
+
+    <!-- HOME -->
+    <section class="screen active" id="screen-home">
+      <div class="rampart">
+        <svg class="rampart-line" viewBox="0 0 24 400" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M12 0 L12 400" stroke="#2F6F63" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round"/>
+        </svg>
+        <div class="fortress-list" id="fortressList"><!-- injected --></div>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="screen" id="screen-calendar">
+      <div class="section-head">
+        <button class="nav-arrow" id="calPrev" aria-label="الشهر السابق">›</button>
+        <h2 id="calTitle">--</h2>
+        <button class="nav-arrow" id="calNext" aria-label="الشهر التالي">‹</button>
+      </div>
+      <div class="streak-banner" id="streakBanner">🔥 0 يوم متتالٍ</div>
+      <div class="cal-weekdays" id="calWeekdays"></div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i class="dot gray"></i> لم يبدأ</span>
+        <span><i class="dot blue"></i> جارٍ</span>
+        <span><i class="dot green"></i> مكتمل</span>
+        <span><i class="dot red"></i> انقطاع</span>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="screen" id="screen-stats">
+      <h2 class="section-title">الإحصائيات</h2>
+      <div class="stats-grid" id="statsGrid"><!-- injected --></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="screen" id="screen-settings">
+      <h2 class="section-title">الإعدادات</h2>
+      <div class="settings-list" id="settingsList"><!-- injected --></div>
+    </section>
+
+  </main>
+
+  <!-- ===== Bottom Nav ===== -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-screen="home"><span class="nav-icon">🏰</span><span>الرئيسية</span></button>
+    <button class="nav-item" data-screen="calendar"><span class="nav-icon">📅</span><span>التقويم</span></button>
+    <button class="nav-item" data-screen="stats"><span class="nav-icon">📊</span><span>الإحصائيات</span></button>
+    <button class="nav-item" data-screen="settings"><span class="nav-icon">⚙️</span><span>الإعدادات</span></button>
+  </nav>
+
+</div>
+
+<!-- ===== Modal ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+      <h3 id="modalTitle">--</h3>
+    </div>
+    <div class="modal-body" id="modalBody"><!-- injected --></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
